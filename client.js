@@ -41,6 +41,13 @@ function addEmployee(event) {
 }
 
 function removeEmployee(event) {
+    // Subtracts deleted employee's salary from the monthly cost
+    let subtractSalary = event.target.parentElement.parentElement.children[4].innerHTML;
+    subtractSalary /= 12;
+    monthlyCost -= subtractSalary;
+    monthlyCostDiv.innerHTML = `Total Monthly Cost: ${monthlyCost}`;
+    // Removes employee from the table
     event.target.parentElement.parentElement.remove();
+    
 
 }
