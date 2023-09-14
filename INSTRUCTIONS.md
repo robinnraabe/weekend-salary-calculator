@@ -20,8 +20,13 @@ Create a delete button that removes an employee from the DOM. For Base mode, it 
 No files have been provided (just instructions.md and a readme.md). Instead of forking and cloning this repo, please choose "Use This Template" (green button) and name your new repo "weekend-salary-calculator" and clone down from there. Make sure to commit regularily!
 
 ### Wireframe
-
 ![Wireframe](salary-calc-wireframe.png)
+- Create HTML, JS, CSS files
+- Creat form input field for first name, last name, ID#, job title, annual salary
+- Create submit button that collects/stores form info, calculates monthly costs, append info to DOM, clear fields
+- Boolean to check if monthly cost exceeds $20,000, changes bg color of total monthly cost
+- Create delete button to remove employee from DOM
+- Subtract deleted employee's monthly cost from total
 
 ## Stretch Mode
 
