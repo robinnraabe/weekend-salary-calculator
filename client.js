@@ -2,6 +2,7 @@ let employeeArray = [];
 let employeeObject = {};
 let monthlyCost = 0;
 let employeeDiv = document.querySelector("#employees");
+let monthlyCostDiv = document.querySelector("#monthly-cost");
 
 function addEmployee(event) {
     event.preventDefault();
@@ -33,11 +34,13 @@ function addEmployee(event) {
     document.querySelector("#annual-salary-input").value = "";
     console.log(monthlyCost);
     // Boolean - will be updated and fixed during styling
-    // if (monthlyCost > 20000) {
-    //    monthlyCost.style.backgroundColor = "pink";
-    // }
+    if (monthlyCost > 20000) {
+        monthlyCostDiv.style.backgroundColor = "pink";
+    }
+    monthlyCostDiv.innerHTML = `Total Monthly Cost: ${monthlyCost}`;
 }
 
 function removeEmployee(event) {
     event.target.parentElement.parentElement.remove();
+
 }
