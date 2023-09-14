@@ -2,6 +2,7 @@ body {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
+    background-color: aliceblue;
 }
 
 h1 {
@@ -14,27 +15,73 @@ h1 {
 }
 
 h3 {
-    padding-left: 10px;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-left: 10px;
+    padding-left: 30px;
     font-weight: lighter;
 }
 
-h4 {
-    margin-right: 200px;
-    padding-left: 10px;
+#monthly-cost {
+    padding: 5px 10px 5px 10px;
     font-weight: lighter;
-    background-color: lightgreen;
-    text-align: right;
+    background-color: palegoldenrod;
+    text-align: left;
 }
 
 .form-style {
+    padding-left: 30px;
+}
+
+table {
+    margin-top: 50px;
+    width: 80%;
+    margin-left: 30px;
+    border-collapse: collapse;
+    text-align: left;
+    order: 2px solid rgb(192, 184, 117);
+}
+
+#table-row td {
+    border: 2px solid rgb(192, 184, 117);
+    padding: 10px;
+}
+
+#cost-row {
+    background-color: palegoldenrod;
+    border: 2px solid rgb(192, 184, 117);
+}
+
+thead th {
+    font-size: 20px;
     padding-left: 10px;
+    padding-bottom: 20px;
+    font-weight: lighter;
 }
 
-.monthly-cost {
-
+#table-row th {
+    border: 2px solid rgb(192, 184, 117);
+    padding: 10px;
+    background-color: palegoldenrod;
 }
 
-/* does nothing */
-.submit-button {
+#employees tr:hover {background-color: rgb(187, 214, 236);}
 
+.button {
+    background-color: palegoldenrod;
+    border: none;
+    color: black;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 14px;
 }
+
+.button:hover {background-color: rgb(159, 188, 212);}
+
+input[type=text] {
+    border: 2px solid rgb(192, 184, 117);
+    border-radius: 4px;
+    padding: 5px;
+}
+
+input[type=text]:focus {border: 2px solid slategray; outline: none;}

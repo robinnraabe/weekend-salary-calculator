@@ -12,41 +12,51 @@
 <body>
     <h3>Add Employee</h3>
     <form class="form-style" onSubmit="addEmployee(event)">
-        <input type="text" placeholder="First Name" id="first-name-input" />
-        <input type="text" placeholder="Last Name" id="last-name-input" />
-        <input type="text" placeholder="ID" id="ID-number-input" />
-        <input type="text" placeholder="Job Title" id="job-title-input" />
-        <input type="text" placeholder="Annual Salary" id="annual-salary-input" />
-        <button class="submit-button">
-            Add employee
+        <input type="text" required placeholder="First Name" id="first-name-input" />
+        <input type="text" required placeholder="Last Name" id="last-name-input" />
+        <input type="text" required placeholder="ID" id="ID-number-input" />
+        <input type="text" required placeholder="Job Title" id="job-title-input" />
+        <input type="text" required placeholder="Annual Salary" id="annual-salary-input" />
+        <button class="button">
+            Submit
         </button>
     </form>
     <table>
         <thead>
             <tr>
-                <th><h3>Employees</h3></th>
+                <th>Employees</th>
             </tr>
         </thead>
         <tbody id="employees">
             <!-- Top row of the table -->
-            <tr class="table-top-row">
-                <td>First Name</td>
-                <td>Last Name</td>
-                <td>ID</td>
-                <td>Job Title</td>
-                <td>Annual Salary</td>
-                <td></td>
+            <tr id="table-row">
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>ID</th>
+                <th>Job Title</th>
+                <th>Annual Salary</th>
+                <th></th>
             </tr>
-            <!-- Employee divs go here -->
+            <!-- Employee rows go here -->
+            <!-- Example -->
+            <tr id="table-row">
+                <td>Robin</td>
+                <td>Raabe</td>
+                <td>12345</td>
+                <td>Inventory Manager</td>
+                <td>$0</td>
+                <td><button onClick="removeEmployee(event)" class="button">Remove employee</button></td>
+            </tr>
+        </tbody>
+        <!-- Row for total monthly cost-->
+        <tbody id="cost-row">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="monthly-cost">Total Monthly Cost: $0.00</td>
+            <td></td>
         </tbody>
     </table>
-        <h4>
-            <div id="monthly-cost" class="monthly-cost">
-                Total Monthly Cost:
-            </div>
-        </h4>
 </body>
 </html>
-
-
-8 commit
