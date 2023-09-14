@@ -4,6 +4,7 @@ let monthlyCost = 0;
 let employeeDiv = document.querySelector("#employees");
 
 function addEmployee(event) {
+    event.preventDefault();
     // Stores employee info
     employeeObject.firstName = document.querySelector("#first-name-input").value;
     employeeObject.lastName = document.querySelector("#last-name-input").value;
@@ -11,6 +12,15 @@ function addEmployee(event) {
     employeeObject.jobTitle = document.querySelector("#job-title-input").value;
     employeeObject.annualSalary = document.querySelector("#annual-salary-input").value;
     employeeArray.push(employeeObject);
+    // Appends employees to DOM
+    employeeDiv.innerHTML += `
+    <tr>
+        <td> ${employeeObject.firstName} </td>
+        <td> ${employeeObject.lastName} </td>
+        <td> ${employeeObject.idNumber} </td>
+        <td> ${employeeObject.jobTitle} </td>
+        <td> ${employeeObject.annualSalary} </td>
+    <tr>`
     // Updates total monthly cost
     monthlyCost += employeeObject.annualSalary / 12;
     employeeObject = {};
@@ -20,15 +30,13 @@ function addEmployee(event) {
     document.querySelector("#ID-number-input").value = "";
     document.querySelector("#job-title-input").value = "";
     document.querySelector("#annual-salary-input").value = "";
-    // Appends employees to DOM
-    for (let employee of employeeArray) {
-        employeeDiv.innerHTML += `
-        <tr>
-            <td> ${employee.firstName} </td>
-            <td> ${employee.lastName} </td>
-            <td> ${employee.idNumber} </td>
-            <td> ${employee.jobTitle} </td>
-            <td> ${employee.annualSalary} </td>
-        <tr>`
+    console.log(monthlyCost);
+    // Boolean - will be updated and fixed during styling
+    if (monthlyCost > 20000) {
+        monthlyCost.style.backgroundColor = "pink";
     }
+}
+
+function deleteEmployee(event) {
+    
 }

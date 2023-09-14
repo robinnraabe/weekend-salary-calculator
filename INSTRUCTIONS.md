@@ -24,7 +24,7 @@ No files have been provided (just instructions.md and a readme.md). Instead of f
 *- Create HTML, JS, CSS files
 *- Creat form input field for first name, last name, ID#, job title, annual salary
 *- Create submit button that collects/stores form info, calculates monthly costs, append info to DOM, clear fields
-- Boolean to check if monthly cost exceeds $20,000, changes bg color of total monthly cost
+*- Boolean to check if monthly cost exceeds $20,000, changes bg color of total monthly cost
 - Create delete button to remove employee from DOM
 - Subtract deleted employee's monthly cost from total
 
