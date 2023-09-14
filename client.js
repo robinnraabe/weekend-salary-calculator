@@ -20,6 +20,7 @@ function addEmployee(event) {
         <td> ${employeeObject.idNumber} </td>
         <td> ${employeeObject.jobTitle} </td>
         <td> ${employeeObject.annualSalary} </td>
+        <td> <button onClick="removeEmployee(event)"> Remove employee </button> </td>
     <tr>`
     // Updates total monthly cost
     monthlyCost += employeeObject.annualSalary / 12;
@@ -32,11 +33,11 @@ function addEmployee(event) {
     document.querySelector("#annual-salary-input").value = "";
     console.log(monthlyCost);
     // Boolean - will be updated and fixed during styling
-    if (monthlyCost > 20000) {
-        monthlyCost.style.backgroundColor = "pink";
-    }
+    // if (monthlyCost > 20000) {
+    //    monthlyCost.style.backgroundColor = "pink";
+    // }
 }
 
-function deleteEmployee(event) {
-    
+function removeEmployee(event) {
+    event.target.parentElement.parentElement.remove();
 }
