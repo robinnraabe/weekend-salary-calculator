@@ -2,29 +2,41 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>title</title>
+    <title>Salary Calculator</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="client.js" defer></script>
 </head>
+<header>
+    <h1>Salary Calculator</h1>
+</header>
 <body>
-    <form onSubmit="">
-        <input type="text" placeholder="first name" id="first-name-input" />
-        <input type="text" placeholder="last name" id="last-name-input" />
-        <input type="text" placeholder="ID number" id="ID-number-input" />
-        <input type="text" placeholder="job title" id="job-title-input" />
-        <input type="text" placeholder="annual salary" id="annual-salary-input" />
-        <button onClick="addEmployee(event)">
+    <h3>Add Employee</h3>
+    <form class="form-style" onSubmit="addEmployee(event)">
+        <input type="text" placeholder="First Name" id="first-name-input" />
+        <input type="text" placeholder="Last Name" id="last-name-input" />
+        <input type="text" placeholder="ID" id="ID-number-input" />
+        <input type="text" placeholder="Job Title" id="job-title-input" />
+        <input type="text" placeholder="Annual Salary" id="annual-salary-input" />
+        <button class="submit-button">
             Add employee
         </button>
     </form>
     <table>
         <thead>
             <tr>
-                <th>Employees</th>
-                <th> </th>
+                <th><h3>Employees</h3></th>
             </tr>
         </thead>
         <tbody id="employees">
+            <!-- Top row of the table -->
+            <tr class="table-top-row">
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>ID</td>
+                <td>Job Title</td>
+                <td>Annual Salary</td>
+                <td></td>
+            </tr>
             <!-- Employee divs go here -->
         </tbody>
     </table>
