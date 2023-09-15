@@ -15,20 +15,15 @@ function addEmployee(event) {
     // Appends employees to DOM
     employeeDiv.innerHTML += `
     <tr id="table-row">
-        <td> ${employeeObject.firstName} </td>
-        <td> ${employeeObject.lastName} </td>
-        <td> ${employeeObject.idNumber} </td>
-        <td> ${employeeObject.jobTitle} </td>
-        <td> $${employeeObject.annualSalary} </td>
+        <td>${employeeObject.firstName}</td>
+        <td>${employeeObject.lastName}</td>
+        <td>${employeeObject.idNumber}</td>
+        <td>${employeeObject.jobTitle}</td>
+        <td>$${employeeObject.annualSalary}</td>
         <td> <button onClick="removeEmployee(event)" class="button"> Remove employee </button> </td>
     <tr>`
-    // Fixes formatting of numbers
-    let salaryString = String(employeeObject.annualSalary);
-    salaryString = salaryString.replace('$', '');
-    salaryString = salaryString.replace('$', '');
-    salaryString = salaryString.replace(',', '');
     // Updates total monthly cost
-    monthlyCost += (Number(salaryString) / 12);
+    monthlyCost += employeeObject.annualSalary / 12;
     // Clears input fields
     employeeObject = {};
     document.querySelector("#first-name-input").value = "";
@@ -50,16 +45,19 @@ function checkCost(total) {
         monthlyCostDiv.innerHTML = `Total Monthly Cost: $${total.toFixed(2)}`;
 }
 
+// Converts salary string to number
+function fixSalary(salary) {
+    let salaryArray = salary.split('');
+    salaryArray.shift();
+    salary = Number(salaryArray.join(''));
+    return salary;
+}
+
 // Removes employee from the table and subtracts their salary from the total monthly cost
 function removeEmployee(event) {
-    // Fixes formatting of numbers
-    let salaryString = String(event.target.parentElement.parentElement.children[4].innerHTML)   
-    salaryString = salaryString.replace('$', '');
-    salaryString = salaryString.replace('$', '');
-    salaryString = salaryString.replace(',', '');
-    salaryString = Number(salaryString) / 12;
-    // Subtracts deleted employee's salary from the monthly cost
-    monthlyCost -= salaryString;
+    let salary = fixSalary(event.target.parentElement.parentElement.children[4].innerHTML);  
+    // Subtracts deleted employee's monthly salary from the monthly cost
+    monthlyCost -= salary / 12;
     checkCost(monthlyCost);
     // Removes employee from the table
     event.target.parentElement.parentElement.remove();
